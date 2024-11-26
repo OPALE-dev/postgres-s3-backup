@@ -15,7 +15,7 @@
 | AWS_S3_ENDPOINT        |    ✔     |               | AWS S3 endpoint with bucket and path (e.g. "my-bucket/postgres-backup")                                                       |
 | AWS_S3_STORAGE_CLASS   |          | STANDARD_IA   | AWS S3 storage class (see https://aws.amazon.com/s3/storage-classes/ and https://rclone.org/s3/#s3-storage-class for options. |
 | AWS_SECRET_ACCESS_KEY  |    ✔     |               | Secret access key for the AWS account                                                                                         |
-| AWS_S3_PROVIDER        |    ✔     |               | AWS Provider for compatible S3 Object Storage                                                                                 |
+| AWS_S3_PROVIDER        |          |      AWS      | AWS Provider to handle other compatible S3 Object Storage providers                                                           |
 | POSTGRES_DB            |    ✔     |               | Postgres server database                                                                                                      |
 | POSTGRES_HOST          |          | postgres      | Postgres server host                                                                                                          |
 | POSTGRES_PASSWORD      |    ✔     |               | Postgres server password                                                                                                      |
