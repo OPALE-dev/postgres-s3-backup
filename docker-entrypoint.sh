@@ -13,6 +13,7 @@ SECONDS=0
 
 # optional environment variables with defaults
 AWS_S3_STORAGE_CLASS="${AWS_S3_STORAGE_CLASS:-STANDARD_IA}"
+AWS_S3_PROVIDER="${AWS_S3_PROVIDER:-AWS}"
 POSTGRES_HOST="${POSTGRES_HOST:-postgres}"
 POSTGRES_PORT="${POSTGRES_PORT:-5432}"
 POSTGRES_USER="${POSTGRES_USER:-postgres}"
@@ -43,7 +44,7 @@ echo "Uploading to S3..."
 rclone copyto \
   --s3-no-check-bucket \
   "./${BACKUP_FILE_NAME}" \
-  ":s3,access_key_id=${AWS_ACCESS_KEY_ID},provider=AWS,region=${AWS_REGION},secret_access_key=${AWS_SECRET_ACCESS_KEY},storage_class=${AWS_S3_STORAGE_CLASS}:${AWS_S3_ENDPOINT}/${BACKUP_FILE_NAME}"
+  ":s3,access_key_id=${AWS_ACCESS_KEY_ID},provider=${AWS_S3_PROVIDER},region=${AWS_REGION},secret_access_key=${AWS_SECRET_ACCESS_KEY},storage_class=${AWS_S3_STORAGE_CLASS}:${AWS_S3_ENDPOINT}/${BACKUP_FILE_NAME}"
 echo "Uploading to S3... Done."
 
 if [ -n "${WEBGAZER_HEARTBEAT_URL}" ]; then
